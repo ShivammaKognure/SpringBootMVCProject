@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Contact Us Section -->
+    <div th:fragment="content">
+    <div class="container mt-3 mb-3">
+        <h2 class="text-center mb-4">Contact Us</h2>
+
+        <!-- Contact Details -->
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Contact Details</h4>
+                <p><strong>Phone:</strong> +1-234-567-890</p>
+                <p><strong>Email:</strong> contact@yourcompany.com</p>
+                <p><strong>Office Hours:</strong> Monday to Friday, 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <!-- Location (Map or Address) -->
+            <div class="col-md-6">
+                <h4>Location</h4>
+                <p><strong>Address:</strong></p>
+                <p>1234 Your Street, Your City, Your Country</p>
+
+                <!-- You can also embed a Google Maps iframe -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.837048338992!2d144.95592311588027!3d-37.81720957975161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sYour+Business+Location!5e0!3m2!1sen!2sin!4v1617890747519!5m2!1sen!2sin"
+                    width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+</div>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

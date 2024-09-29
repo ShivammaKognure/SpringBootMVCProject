@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>home</title>
+</head>
+<body>
+
+ <div class="container" th:fragment="content">
+           <div class="row">
+            <!--  div class="col-md-6 d-flex align-items-center"-->
+                <!-- Welcome Text Section -->
+                <div>
+                    <h1>Welcome to Our Website!</h1>
+                    <p class="lead">We are delighted to have you here. Explore our products and services that are crafted to meet all your needs.</p>
+                    <p>Feel free to browse through our offerings and learn more about how we can assist you.</p>
+                </div>
+          
+            </div>
+            <div class="row">
+            <!--  div class="col-md-6"-->
+                <!-- Image Section -->
+                <img th:src="@{images/pro-img.jpg}" class="img-fluid" alt="Welcome Image" style="width: 100%; height: Auto;">
+                <!-- img th:src="@{images/pro-img.jpg}" class="img-fluid" alt="Welcome Image" style="width: 100%; height: auto;"-->
+        
+        </div>
+        
+    </div>
+
+ 
+</body>
+</html>

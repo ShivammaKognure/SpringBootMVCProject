@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Product by ID</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div th:fragment="content">
+    <div class="container mt-2 col-md-6 shadow-lg p-3 mb-2">
+        <h2 class="my-4">Enter Product ID</h2>
+
+        <!-- Display error message if product not found -->
+        <div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}"></div>
+
+        <!-- Form to input product ID -->
+        <form th:action="@{/productFind}" method="post">
+            <div class="form-group">
+                <label for="prodId">Product ID</label>
+                <input type="number" class="form-control" id="prodId" name="id" placeholder="Enter product ID" required>
+            </div>
+            <button type="submit" class="btn btn-success">Find Product</button>
+        </form>
+        
+        </div>
+        
+        
+         <!-- div th:if="${product != null}">
+        
+         <h2>Product Details</h2>
+        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" th:text="${product.proName}">Product Name</h4>
+                <p class="card-text"><strong>Price:</strong> <span th:text="${product.proPrice}"></span></p>
+                <p class="card-text"><strong>Discounted Price:</strong> <span th:text="${product.proPriceDisc}"></span></p>
+                <p class="card-text"><strong>Brand:</strong> <span th:text="${product.proBrand}"></span></p>
+                <p class="card-text"><strong>Description:</strong> <span th:text="${product.proDescription}"></span></p>
+                <p class="card-text"><strong>Category:</strong> <span th:text="${product.proCategory}"></span></p>
+                <p class="card-text"><strong>Created At:</strong> <span th:text="${product.createdAt}"></span></p>
+                <p class="card-text"><strong>Created By:</strong> <span th:text="${product.createdBy}"></span></p>
+            </div>
+        </div>
+        </div>
+        </div>
+        
+         <div th:if="${errorMessage != null}" class="alert alert-danger mt-4">
+            <p th:text="${errorMessage}"></p>
+        </div-->
+    </div>
+</body>
+</html>

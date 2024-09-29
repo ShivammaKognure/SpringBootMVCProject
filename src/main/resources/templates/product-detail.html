@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container" th:fragment="content">
+        <h2 class="my-4">Product Details</h2>
+        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" th:text="${product.proName}">Product Name</h4>
+                <p class="card-text"><strong>Price:</strong> <span th:text="${product.proPrice}"></span></p>
+                <p class="card-text"><strong>Discounted Price:</strong> <span th:text="${product.proPriceDisc}"></span></p>
+                <p class="card-text"><strong>Brand:</strong> <span th:text="${product.proBrand}"></span></p>
+                <p class="card-text"><strong>Description:</strong> <span th:text="${product.proDescription}"></span></p>
+                <p class="card-text"><strong>Category:</strong> <span th:text="${product.proCategory}"></span></p>
+                <p class="card-text"><strong>Created At:</strong> <span th:text="${product.createdAt}"></span></p>
+                <p class="card-text"><strong>Created By:</strong> <span th:text="${product.createdBy}"></span></p>
+            </div>
+        </div>
+
+        <!--  a href="/product/id-form" class="btn btn-primary mt-3">Back to Product ID Form</a-->
+    </div>
+</body>
+</html>

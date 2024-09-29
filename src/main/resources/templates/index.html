@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MyStore</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mystyles.css">
+    
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top">
+        <a class="navbar-brand" href="#">MyStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/addProduct}">Add Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/getProducts}">Product List</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/getProductSearchForm}">Search</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <div class="container-fluid p-3">
+        <!-- Use th:switch to determine which page content to display -->
+        
+      <div class="content container">
+        <div th:switch="${page}">
+            
+            <div th:case="'home'">
+                <div th:include="~{home :: content}"></div>
+            </div>
+             <!-- Add product page content -->
+             
+            <div th:case="'productForm'">
+                <div th:include="~{add-product :: content}"></div>
+            </div>
+            <div th:case="'success'">
+                <div th:include="~{success :: content}"></div>
+		   </div>
+            <div th:case="'getProducts'">
+                <div th:include="~{product-list :: content}"></div>
+            </div>
+            <div th:case="'getProdSearchForm'">
+                <div th:include="~{product-search :: content}"></div>
+            </div>
+            <div th:case="'about'">
+                <div th:include="~{about-us :: content}"></div>
+            </div>
+            <div th:case="'edit'">
+                <div th:include="~{edit-product :: content}"></div>
+            </div>
+            <div th:case="'contact'">
+                <div th:include="~{contact-us :: content}"></div>
+		   </div>
+		    
+		   <div th:case="'productFind'">
+                <div th:include="~{product-detail :: content}"></div>
+            </div>	
+          </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer class="footer bg-light mt-auto py-3">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 MyStore. All Rights Reserved.</span>
+        </div>
+    </footer>
+</body>
+</html>

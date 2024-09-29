@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Edit Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div th:fragment="content">
+    <div class="container mt-2 col-md-6 shadow-lg p-3 mb-2">
+        <h2>Edit Product</h2>
+        
+        <!-- Thymeleaf Form -->
+        <form th:action="@{/editSave(proId=${proId})}" th:object="${productModel}" method="post">
+            <!-- Product Name-->
+            <!-- input type="hidden" id="proId" name="proId" th:value="${proId}" readonly/-->
+            <div class="form-group">
+                <label for="proName">Product Name</label>
+                <input type="text" class="form-control" id="proName" th:field="*{proName}" placeholder="Enter product name" required />
+                <div class="invalid-feedback">Please enter a product name.</div>
+            </div>
+
+            <!-- Product Price -->
+            <div class="form-group">
+                <label for="proPrice">Product Price</label>
+                <input type="number" class="form-control" id="proPrice" th:field="*{proPrice}" step="0.01" placeholder="Enter product price" required />
+                <div class="invalid-feedback">Please enter a valid product price.</div>
+            </div>
+
+            <!-- Product Description -->
+            <div class="form-group">
+                <label for="proDescription">Product Description</label>
+                <textarea class="form-control" id="proDescription" th:field="*{proDescription}" rows="3" placeholder="Enter product description" required></textarea>
+                <div class="invalid-feedback">Please enter a product description.</div>
+            </div>
+
+            <!-- Product Category (Dropdown) -->
+            <div class="form-group">
+                <label for="proCategory">Product Category</label>
+                <select class="form-control" id="proCategory" th:field="*{proCategory}" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+                <div class="invalid-feedback">Please select a product category.</div>
+            </div>
+
+            <!-- Product Brand -->
+            <div class="form-group">
+                <label for="proBrand">Product Brand</label>
+                <input type="text" class="form-control" id="proBrand" th:field="*{proBrand}" placeholder="Enter product brand" required />
+                <div class="invalid-feedback">Please enter a product brand.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success">Edit</button>
+
+        </form>
+    </div>
+   </div>           
+
+
+</body>
+</html>
